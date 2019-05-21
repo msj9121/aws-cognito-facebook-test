@@ -1,0 +1,11 @@
+{
+  "cognito": {
+    "REGION": "ap-northeast-2",
+    "USER_POOL_ID": "ap-northeast-2_kKQwa4bED",
+    "APP_CLIENT_ID": "44haiir8jandvi19153vaup8to",
+    "IDENTITY_POOL_ID": "ap-northeast-2:af504feb-851a-49e3-acad-f7e92b3f1c41"
+  },
+  "social": {
+    "FB": "877706145908567"
+  }
+}
