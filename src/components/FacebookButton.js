@@ -54,27 +54,32 @@ export default class FacebookButton extends Component {
   }
 
   //todo
-  async _handleResponse(data) {
-    console.log("handleResponse", data);
+  _handleResponse(data) {
     const { email, accessToken: token, expiresIn } = data;
     const expires_at = expiresIn * 1000 + new Date().getTime();
     const user = { email };
+    console.log("날짜", expires_at);
+    console.log("사용자", user);
+    console.log("토큰", token);
 
-    this.setState({ isLoading: true });
-
-    try {
-      const response = await Auth.federatedSignIn(
-        "facebook",
-        { token, expires_at },
-        user
-      );
-      this.setState({ isLoading: false });
-      console.log(response);
-      this.props.onLogin(response);
-    } catch (e) {
-      this.setState({ isLoading: false });
-      this._handleError(e);
-    }
+    Auth.federatedSignIn("facebook", { token, expires_at }, user)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    // console.log("응답", response);
+    // try {
+    //   const response = await Auth.federatedSignIn(
+    //     "facebook",
+    //     { token, expires_at },
+    //     user
+    //   );
+    //   console.log("응답", response);
+    // } catch (e) {
+    //   this._handleError(e);
+    // }
   }
 
   render() {

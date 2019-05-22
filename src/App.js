@@ -23,7 +23,7 @@ class App extends Component {
         appId            : "877706145908567",
         autoLogAppEvents : true,
         xfbml            : true,
-        version          : 'v3.1'
+        version          : 'v3.3'
       });
     };
 
@@ -31,7 +31,7 @@ class App extends Component {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {return;}
       js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      js.src = "https://connect.facebook.net/ko_KR/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   }
